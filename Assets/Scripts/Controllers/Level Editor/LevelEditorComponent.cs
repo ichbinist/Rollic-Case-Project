@@ -24,21 +24,21 @@ public abstract class LevelEditorComponent : MonoBehaviour, IEditorPlaceable, IE
         }
     }
 
-    public float[] AlignPositionVector(float width, int numSlices, float spacing, float forwardPositionOffset = 0)
+    public float[] AlignPositionVector(float width, int numberOfSlices, float spacing, float forwardPositionOffset = 0)
     {
-        float sliceWidth = width / (numSlices - 1);
-        float[] positions = new float[numSlices];
+        float sliceWidth = width / (numberOfSlices - 1);
+        float[] positions = new float[numberOfSlices];
 
-        for (int i = 0; i < numSlices; i++)
+        for (int i = 0; i < numberOfSlices; i++)
         {
             positions[i] = (i * sliceWidth) - (width / 2.0f);
-            if(i <= (numSlices / 2 - 1))
+            if(i <= (numberOfSlices / 2 - 1))
             {
-                positions[i] -= Mathf.Abs(i - ((numSlices - 1)/2f)) * spacing;
+                positions[i] -= Mathf.Abs(i - ((numberOfSlices - 1)/2f)) * spacing;
             }
             else
             {
-                positions[i] += Mathf.Abs(i - ((numSlices - 1)/2f)) * spacing;
+                positions[i] += Mathf.Abs(i - ((numberOfSlices - 1)/2f)) * spacing;
             }
             positions[i] += forwardPositionOffset;
         }
@@ -48,15 +48,15 @@ public abstract class LevelEditorComponent : MonoBehaviour, IEditorPlaceable, IE
 
     public float GetClosestAlignedXPosition(Vector3 position, float[] alignedPositions)
     {
-        float minDiff = Mathf.Infinity;
+        float minDifference = Mathf.Infinity;
         int closestIndex = 0;
 
         for (int i = 0; i < alignedPositions.Length; i++)
         {
-            float diff = Mathf.Abs(position.x - alignedPositions[i]);
-            if (diff < minDiff)
+            float difference = Mathf.Abs(position.x - alignedPositions[i]);
+            if (difference < minDifference)
             {
-                minDiff = diff;
+                minDifference = difference;
                 closestIndex = i;
             }
         }
