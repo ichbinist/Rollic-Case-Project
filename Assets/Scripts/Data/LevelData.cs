@@ -8,6 +8,8 @@ public class LevelData : ScriptableObject
     public LevelType LevelType;
     public float LevelLength;
     public float LevelWidth;
+
+    public List<LevelComponentData> LevelComponentDatas = new List<LevelComponentData>();
 }
 public enum LevelType
 {

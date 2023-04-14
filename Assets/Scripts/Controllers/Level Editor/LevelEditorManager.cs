@@ -20,6 +20,13 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
     [FoldoutGroup("Level Editor Settings")]
     public SpriteRenderer SpriteRenderer;
 
+    [FoldoutGroup("Level Editor Component Placement Settings")]
+    public int VerticalSliceCount = 5;
+    [FoldoutGroup("Level Editor Component Placement Settings")]
+    public float HorizontalSliceRatio = 1.25f;
+    [FoldoutGroup("Level Editor Component Placement Settings")]
+    public float HorizontalPlacementOffset = -0.5f;
+
     [FoldoutGroup("Level Editor Component Settings")]
     public List<LevelEditorComponent> LevelEditorComponents = new List<LevelEditorComponent>();
     
@@ -59,7 +66,7 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
                 {
                     if(LevelEditorGameObjects.Count > 0)
                     {
-                        LevelEditorGameObject[] foundObjects = LevelEditorGameObjects.FindAll(x => Vector3.Distance(x.transform.position, pressedLocation) < 0.1f).ToArray();
+                        LevelEditorGameObject[] foundObjects = LevelEditorGameObjects.FindAll(x => Vector3.Distance(x.transform.position, pressedLocation) < 0.35f).ToArray();
                         foreach (LevelEditorGameObject levelEditorGameObject in foundObjects)
                         {
                             Destroy(levelEditorGameObject.gameObject);
@@ -79,10 +86,20 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
             Debug.LogError("Please Assign a Level Data!");
             return;
         }
+
+        foreach (LevelEditorGameObject levelEditorGameObject in LevelEditorGameObjects)
+        {
+            Destroy(levelEditorGameObject.gameObject);
+        }
+
         LevelEditorGameObjects = new List<LevelEditorGameObject>();
+
         ScriptableObjectName = levelData.name;
         LevelLength = levelData.LevelLength;
         LevelWidth = levelData.LevelWidth;
+
+        CreateNewLevelData();
+        CreateLoadedDataGameObjects(levelData);
     }
 
     [FoldoutGroup("Level Data Settings")]
@@ -91,6 +108,19 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
     {
         SpriteRenderer.size = new Vector2(LevelWidth, LevelLength);
         SpriteRenderer.transform.localPosition = new Vector3(0, 0, SpriteRenderer.size.y / 2);
+    }
+
+    private void CreateLoadedDataGameObjects(LevelData levelData)
+    {
+        foreach (LevelComponentData levelComponentData in levelData.LevelComponentDatas)
+        {
+            LevelEditorComponents.Find(x => x.LevelEditorGameObject.EditorObjectType == levelComponentData.EditorObjectType).Place(levelComponentData.Position);
+
+            if(levelComponentData.EditorObjectType == EditorObjectType.Pit)
+            {
+                (LevelEditorGameObjects[LevelEditorGameObjects.Count - 1] as PitGameObject).PitRequiredCount = levelComponentData.PitRequiredCount;
+            }
+        }
     }
 
 #if UNITY_EDITOR
@@ -106,7 +136,7 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
 
         var asset = ScriptableObject.CreateInstance<LevelData>();
 
-        string folderPath = "Assets/Resources/Data/Scriptable Objects/Maze Data";
+        string folderPath = "Assets/Data/Level Data";
         string filePath = Path.Combine(folderPath, $"{ScriptableObjectName}.asset");
 
         if (!Directory.Exists(folderPath))
@@ -116,7 +146,20 @@ public class LevelEditorManager : Singleton<LevelEditorManager>
 
         AssetDatabase.CreateAsset(asset, filePath);
 
-        //Move Level data inside asset variable
+        asset.LevelLength = LevelLength;
+        asset.LevelWidth = LevelWidth;
+
+        foreach (LevelEditorGameObject levelEditorGameObject in LevelEditorGameObjects)
+        {
+            LevelComponentData levelComponentData = new LevelComponentData(levelEditorGameObject.EditorObjectType, levelEditorGameObject.transform.position, 0);
+
+            if(levelComponentData.EditorObjectType == EditorObjectType.Pit)
+            {
+                levelComponentData.PitRequiredCount = (levelEditorGameObject as PitGameObject).PitRequiredCount;
+            }
+
+            asset.LevelComponentDatas.Add(levelComponentData);
+        }
 
         EditorUtility.SetDirty(asset);
         AssetDatabase.SaveAssets();
