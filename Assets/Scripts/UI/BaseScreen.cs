@@ -6,14 +6,17 @@ public abstract class BaseScreen : MonoBehaviour
 {
     public GameObject Graphics;
 
-    protected virtual void Open()
+    public bool IsScreenActive
+    {
+        get { return (Graphics.activeSelf); }
+    }
+    public virtual void Open(LevelData levelData)
     {
         Graphics.SetActive(true);
     }
 
-    protected virtual void Close()
+    public virtual void Close(LevelData levelData)
     {
         Graphics.SetActive(false);
-
     }
 }

@@ -12,9 +12,10 @@ public class LevelInitializationManager : Singleton<LevelInitializationManager>
     #region Events
     public Action<LevelData> OnLevelLoaded;
     public Action<LevelData> OnLevelUnloaded;
-    public Action OnLevelRestarted;
-    public Action OnLevelStarted;
-    public Action OnLevelFinished;
+    public Action<LevelData> OnLevelRestarted;
+    public Action<LevelData> OnLevelStarted;
+    public Action<LevelData> OnLevelFinished;
+    public Action<bool> OnLevelFinalized;
     #endregion
 
     private void OnEnable()
@@ -120,6 +121,6 @@ public class LevelInitializationManager : Singleton<LevelInitializationManager>
     [Button]
     public void RestartLevel()
     {
-        OnLevelRestarted?.Invoke();
+        OnLevelRestarted?.Invoke(GetCurrentLevelData);
     }
 }
