@@ -22,7 +22,7 @@ public class SceneInitializationManager : Singleton<SceneInitializationManager>
     #endregion
 
     #region Events
-
+    public Action OnGameplaySceneLoaded;
     #endregion
 
     #region Monobehaviours
@@ -48,6 +48,7 @@ public class SceneInitializationManager : Singleton<SceneInitializationManager>
     {
         yield return StartCoroutine(DoLoadScene("UI"));
         yield return StartCoroutine(DoLoadScene("Gameplay"));
+        OnGameplaySceneLoaded.Invoke();
     }
 
     private IEnumerator DoLoadScene(string SceneName)
