@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16092bd40b461274e91d572c3d8ee2b0, type: 3}
+  m_Name: Level_1
+  m_EditorClassIdentifier: 
+  LevelType: 0
+  LevelLength: 22
+  LevelWidth: 6
+  LevelComponentDatas:
+  - EditorObjectType: 0
+    Position: {x: -2.25, y: -0.0000009536743, z: 5.067568}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 5.067568}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 5.067568}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2.25, y: -0.0000009536743, z: 5.067568}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2.25, y: -0.0000009536743, z: 3.7162166}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 3.7162166}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 3.7162166}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2.25, y: -0.0000009536743, z: 3.7162166}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2.25, y: -0.0000009536743, z: 6.4189196}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 6.4189196}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 6.4189196}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2.25, y: -0.0000009536743, z: 6.4189196}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 7.770271}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 7.770271}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 9.121622}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 10.472974}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 10.472974}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 9.121622}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -0.75, y: -0.0000009536743, z: 11.824325}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0.75, y: -0.0000009536743, z: 11.824325}
+    PitRequiredCount: 0
+  - EditorObjectType: 1
+    Position: {x: 0, y: -0.0000009536743, z: 16.33715}
+    PitRequiredCount: 10
