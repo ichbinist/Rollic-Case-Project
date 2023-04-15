@@ -8,6 +8,8 @@ public class GameplayLoader : MonoBehaviour
     public GameObject PlatformPrefab;
     [FoldoutGroup("References")]
     public GameObject SidewayPrefab;
+    [FoldoutGroup("References")]
+    public GameObject EndlinePrefab;
     [FoldoutGroup("References/Gameplay Object References")]
     public List<GameplayGameObjectComponent> GameplayObjects = new List<GameplayGameObjectComponent>();
     [FoldoutGroup("Settings")]
@@ -42,6 +44,7 @@ public class GameplayLoader : MonoBehaviour
     private void LoadLevel(LevelData levelData)
     {
         GameObject levelDataObject = new GameObject(levelData.name);
+        levelDataObject.transform.parent = transform;
 
         LevelComponentData[] pitData = levelData.LevelComponentDatas.FindAll(x => x.EditorObjectType == EditorObjectType.Pit).ToArray();
 
@@ -53,7 +56,7 @@ public class GameplayLoader : MonoBehaviour
         LocalLevelDatas.Add(newLevelData);
 
         levelDataObject.transform.position = new Vector3(0f, 0f, currentTargetLength);
-        currentTargetLength += levelData.LevelLength;
+        currentTargetLength += levelData.LevelLength + 1f;
     }
 
     private void InitializePlatforms(LevelComponentData[] pitData, LevelData levelData, GameObject levelDataObject)
@@ -80,6 +83,9 @@ public class GameplayLoader : MonoBehaviour
         {
             AddPlatform(levelDataObject, levelData.LevelWidth, levelData.LevelLength);
         }
+
+        GameObject endlinePlatform = AddPlatform(levelDataObject, 1f, 1f, EndlinePrefab);
+        endlinePlatform.transform.localPosition = new Vector3(0, 0, levelData.LevelLength + 0.5f);
     }
 
     private void InitializeGameplayObjects(GameObject levelDataObject, LevelData levelData)
@@ -110,9 +116,19 @@ public class GameplayLoader : MonoBehaviour
         sideway.transform.localPosition = new Vector3(xPosition, 0f, 0f);
     }
 
-    private GameObject AddPlatform(GameObject levelDataObject,float width, float length)
+    private GameObject AddPlatform(GameObject levelDataObject,float width, float length, GameObject platformPrefab = null)
     {
-        GameObject platform = Instantiate(PlatformPrefab, levelDataObject.transform);
+        GameObject platform;
+
+        if (platformPrefab)
+        {
+            platform = Instantiate(platformPrefab, levelDataObject.transform);
+        }
+        else
+        {
+            platform = Instantiate(PlatformPrefab, levelDataObject.transform);
+        }
+
         platform.transform.localScale = new Vector3(width, 1f, length);
         return platform;
     }

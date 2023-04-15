@@ -473,6 +473,8 @@ MonoBehaviour:
     type: 3}
   SidewayPrefab: {fileID: 732614637737096733, guid: 52c1cc3175afc724cabbf2b2f9147055,
     type: 3}
+  EndlinePrefab: {fileID: 334397900817594466, guid: 8665e6c85a8b3d54cb5080ac9c79c93e,
+    type: 3}
   GameplayObjects:
   - {fileID: 3500025785042252306, guid: 43d4f410e00789e439c6987a3d59f5e1, type: 3}
   - {fileID: 1233172877078229399, guid: 9b41253a634444b4fa481329c9972867, type: 3}
@@ -503,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540061864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1196168519}
