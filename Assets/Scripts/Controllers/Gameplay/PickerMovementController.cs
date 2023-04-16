@@ -23,12 +23,15 @@ public class PickerMovementController : MonoBehaviour
     private Rigidbody _rigidbody;
     public Rigidbody _Rigidbody { get { return (_rigidbody == null) ? _rigidbody = GetComponent<Rigidbody>() : _rigidbody; } }
 
+    private PickerObjectController pickerObjectController;
+    public PickerObjectController PickerObjectController { get { return (pickerObjectController == null) ? pickerObjectController = GetComponent<PickerObjectController>() : pickerObjectController; } }
 
     private void OnEnable()
     {
         LeanTouch.OnFingerUpdate += OnFingerSwerve;
         LeanTouch.OnFingerDown += OnFingerDown;
         LevelInitializationManager.Instance.OnLevelStarted += OnLevelStarted;
+        GameEventManager.Instance.OnPickerMovementFinalized += OnLevelFinalized;
         GameEventManager.Instance.OnPickerMovementStart += () =>  HorizontalMovementIndicator = 1f;
         GameEventManager.Instance.OnPickerMovementStop += () =>  HorizontalMovementIndicator = 0f;
     }
@@ -43,6 +46,7 @@ public class PickerMovementController : MonoBehaviour
         }
         if (GameEventManager.Instance)
         {
+            GameEventManager.Instance.OnPickerMovementFinalized -= OnLevelFinalized;
             GameEventManager.Instance.OnPickerMovementStart -= () => HorizontalMovementIndicator = 1f;
             GameEventManager.Instance.OnPickerMovementStop -= () => HorizontalMovementIndicator = 0f;
         }
@@ -50,7 +54,7 @@ public class PickerMovementController : MonoBehaviour
 
     private void OnFingerDown(LeanFinger finger)
     {
-        localStartPosition = transform.position.x;   
+        localStartPosition = transform.position.x;
     }
 
     private void OnFingerSwerve(LeanFinger finger)
@@ -67,6 +71,12 @@ public class PickerMovementController : MonoBehaviour
     private void OnLevelStarted(LevelData levelData)
     {
         IsMovementStarted = true;
+    }
+
+    private void OnLevelFinalized(float startingZPosition)
+    {
+        IsMovementStarted = false;
+        PickerObjectController.StartingPosition.z = startingZPosition;
     }
 
     private void FixedUpdate()

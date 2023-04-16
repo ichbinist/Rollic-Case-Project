@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 public class PitController : GameplayObjectController
 {
     [ReadOnly]
@@ -31,8 +32,6 @@ public class PitController : GameplayObjectController
         IsPitCountReached = false;
         Graphics.SetActive(true);
         LocalPlatform.transform.localPosition = LocalPlatformStartingPosition;
-        LocalPlatform.transform.localScale = Vector3.zero;
-        LocalPlatform.SetActive(false);
         isPickerEntered = false;
         collectedCollectables.Clear();
         UpdateText();
@@ -80,8 +79,9 @@ public class PitController : GameplayObjectController
         yield return new WaitForSeconds(ResultWaitTime);
         if(collectedCollectables.Count >= PitGameObjectComponent.PitRequiredCount)
         {
-            GameEventManager.Instance.OnPickerMovementStart.Invoke();
+            //GameEventManager.Instance.OnPickerMovementStart.Invoke();
             GameEventManager.Instance.OnTaggedObjectsClear.Invoke();
+            LocalPlatform.transform.DOMoveY(0f, 0.75f).SetEase(Ease.OutElastic).OnComplete(()=> { GameEventManager.Instance.OnPickerMovementStart.Invoke(); });
         }
         else
         {
