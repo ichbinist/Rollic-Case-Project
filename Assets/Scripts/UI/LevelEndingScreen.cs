@@ -8,6 +8,9 @@ public class LevelEndingScreen : BaseScreen
     private void OnEnable()
     {
         LevelInitializationManager.Instance.OnLevelFinalized += FinalizeLevel;
+        LevelInitializationManager.Instance.OnLevelStarted += Close;
+        LevelInitializationManager.Instance.OnLevelRestarted += Close;
+        LevelInitializationManager.Instance.OnLevelLoaded += Close;
     }
 
     private void OnDisable()
@@ -15,11 +18,16 @@ public class LevelEndingScreen : BaseScreen
         if (LevelInitializationManager.Instance)
         {
             LevelInitializationManager.Instance.OnLevelFinalized -= FinalizeLevel;
+            LevelInitializationManager.Instance.OnLevelStarted -= Close;
+            LevelInitializationManager.Instance.OnLevelRestarted -= Close;
+            LevelInitializationManager.Instance.OnLevelLoaded -= Close;
         }
     }
 
     private void FinalizeLevel(bool state)
     {
+        Open(LevelInitializationManager.Instance.GetCurrentLevelData);
+
         if (state)
         {
             SuccessScreen.Open(LevelInitializationManager.Instance.GetCurrentLevelData);
@@ -30,5 +38,12 @@ public class LevelEndingScreen : BaseScreen
             SuccessScreen.Close(LevelInitializationManager.Instance.GetCurrentLevelData);
             FailScreen.Open(LevelInitializationManager.Instance.GetCurrentLevelData);
         }
+    }
+
+    public override void Close(LevelData levelData)
+    {
+        SuccessScreen.Close(levelData);
+        FailScreen.Close(levelData);
+        base.Close(levelData);
     }
 }

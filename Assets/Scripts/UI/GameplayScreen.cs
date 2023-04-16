@@ -7,6 +7,7 @@ public class GameplayScreen : BaseScreen
     private void OnEnable()
     {
         LevelInitializationManager.Instance.OnLevelLoaded += Close;
+        LevelInitializationManager.Instance.OnLevelRestarted += Close;
         LevelInitializationManager.Instance.OnLevelStarted += Open;
     }
 
@@ -15,6 +16,7 @@ public class GameplayScreen : BaseScreen
         if (LevelInitializationManager.Instance)
         {
             LevelInitializationManager.Instance.OnLevelLoaded -= Close;
+            LevelInitializationManager.Instance.OnLevelRestarted -= Close;
             LevelInitializationManager.Instance.OnLevelStarted -= Open;
         }
     }

@@ -7,20 +7,25 @@ public class SuccessScreen : BaseScreen
 {
     public Button ScreenButton;
 
-    private void OnEnable()
+    private void Start()
     {
         ScreenButton.onClick.AddListener(() => {
-            LevelInitializationManager.Instance.OnLevelFinished.Invoke(LevelInitializationManager.Instance.GetCurrentLevelData);
+            FinishLevel();
         });
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (LevelInitializationManager.Instance)
         {
             ScreenButton.onClick.RemoveListener(() => {
-                LevelInitializationManager.Instance.OnLevelFinished.Invoke(LevelInitializationManager.Instance.GetCurrentLevelData);
+                FinishLevel();
             });
         }
+    }
+
+    private void FinishLevel()
+    {
+        LevelInitializationManager.Instance.FinishLevel();
     }
 }

@@ -7,6 +7,7 @@ public class WaitTapToPlayScreen : BaseScreen
     private void OnEnable()
     {
         LevelInitializationManager.Instance.OnLevelLoaded += Open;
+        LevelInitializationManager.Instance.OnLevelRestarted += Open;
         LevelInitializationManager.Instance.OnLevelStarted += Close;
         LeanTouch.OnFingerDown += OnLeanTouch;
     }
@@ -16,6 +17,7 @@ public class WaitTapToPlayScreen : BaseScreen
         if (LevelInitializationManager.Instance)
         {
             LevelInitializationManager.Instance.OnLevelLoaded -= Open;
+            LevelInitializationManager.Instance.OnLevelRestarted -= Open;
             LevelInitializationManager.Instance.OnLevelStarted -= Close;
         }
         LeanTouch.OnFingerDown -= OnLeanTouch;

@@ -6,20 +6,25 @@ using UnityEngine.UI;
 public class FailScreen : BaseScreen
 {
     public Button ScreenButton;
-    private void OnEnable()
+    private void Start()
     {
         ScreenButton.onClick.AddListener(() => {
-            LevelInitializationManager.Instance.OnLevelRestarted.Invoke(LevelInitializationManager.Instance.GetCurrentLevelData);
+            RestartLevel();
         });
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (LevelInitializationManager.Instance)
         {
             ScreenButton.onClick.RemoveListener(() => {
-                LevelInitializationManager.Instance.OnLevelRestarted.Invoke(LevelInitializationManager.Instance.GetCurrentLevelData);
+                RestartLevel();
             });
         }
+    }
+
+    private void RestartLevel()
+    {
+        LevelInitializationManager.Instance.RestartLevel();
     }
 }

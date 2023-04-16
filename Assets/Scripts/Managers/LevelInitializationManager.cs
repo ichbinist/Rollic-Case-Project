@@ -123,4 +123,10 @@ public class LevelInitializationManager : Singleton<LevelInitializationManager>
     {
         OnLevelRestarted?.Invoke(GetCurrentLevelData);
     }
+
+    [Button]
+    public void FinalizeLevel(bool state)
+    {
+        OnLevelFinalized.Invoke(state);
+    }
 }
