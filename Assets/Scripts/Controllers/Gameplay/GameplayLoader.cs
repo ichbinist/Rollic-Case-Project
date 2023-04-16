@@ -53,6 +53,7 @@ public class GameplayLoader : MonoBehaviour
         InitializeGameplayObjects(levelDataObject, levelData);
         localLevelData newLevelData = new localLevelData();
         newLevelData.LevelDataGameObject = levelDataObject;
+        newLevelData.levelData = levelData;
         LocalLevelDatas.Add(newLevelData);
 
         levelDataObject.transform.position = new Vector3(0f, 0f, currentTargetLength);
@@ -100,6 +101,7 @@ public class GameplayLoader : MonoBehaviour
                 (gameplayGameObject as PitGameObjectComponent).PitRequiredCount = levelComponentData.PitRequiredCount;
             }
             gameplayGameObject.transform.localPosition = new Vector3(levelComponentData.Position.x, 0.1f, levelComponentData.Position.z);
+            gameplayGameObject.Initialize();
         }
     }
 
@@ -135,12 +137,15 @@ public class GameplayLoader : MonoBehaviour
 
     private void UnloadLevel(LevelData levelData)
     {
-
+        localLevelData localLevelData = LocalLevelDatas.Find(x => x.levelData == levelData);
+        LocalLevelDatas.Remove(localLevelData);
+        Destroy(localLevelData.LevelDataGameObject);
     }
 }
 
 
 internal class localLevelData
 {
+    internal LevelData levelData;
     internal GameObject LevelDataGameObject;
 }

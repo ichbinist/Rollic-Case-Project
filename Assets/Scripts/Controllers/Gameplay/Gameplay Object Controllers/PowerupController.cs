@@ -1,18 +1,24 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupController : MonoBehaviour
+public class PowerupController : GameplayObjectController
 {
-    // Start is called before the first frame update
-    void Start()
+    [ReadOnly]
+    public Vector3 StartingPosition;
+    [ReadOnly]
+    public bool isCollected;
+
+    public override void ResetData(LevelData levelData)
     {
-        
+        transform.localPosition = StartingPosition;
+        isCollected = false;
+        Graphics.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void SaveData()
     {
-        
+        StartingPosition = transform.position;
     }
 }
