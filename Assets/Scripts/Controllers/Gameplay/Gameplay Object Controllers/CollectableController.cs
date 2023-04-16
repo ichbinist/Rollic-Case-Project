@@ -13,12 +13,38 @@ public class CollectableController : GameplayObjectController
     [ReadOnly]
     public bool isCollected;
 
+    [ReadOnly]
+    public bool isTagged;
+
+    private void OnEnable()
+    {
+        GameEventManager.Instance.OnTaggedObjectsClear += Dissappear;
+    }
+
+    private void OnDisable()
+    {
+        if (GameEventManager.Instance)
+        {
+            GameEventManager.Instance.OnTaggedObjectsClear -= Dissappear;
+        }
+    }
+
+    private void Dissappear()
+    {
+        if (isTagged)
+        {
+            transform.localScale = Vector3.zero;
+        }
+    }
+
     public override void ResetData(LevelData levelData)
     {
-        _Rigidbody.isKinematic = true;
-        _Rigidbody.useGravity = false;
+        isTagged = false;
+        _Rigidbody.isKinematic = false;
+        _Rigidbody.useGravity = true;
         _Rigidbody.velocity = Vector3.zero;
         _Rigidbody.angularVelocity = Vector3.zero;
+        transform.localScale = Vector3.one;
         transform.localPosition = StartingPosition;
         isCollected = false;
         Graphics.SetActive(true);
