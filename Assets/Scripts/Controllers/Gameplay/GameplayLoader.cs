@@ -101,6 +101,7 @@ public class GameplayLoader : MonoBehaviour
                 (gameplayGameObject as PitGameObjectComponent).PitRequiredCount = levelComponentData.PitRequiredCount;
             }
             gameplayGameObject.transform.localPosition = new Vector3(levelComponentData.Position.x, 0.1f, levelComponentData.Position.z);
+            gameplayGameObject.Initialize();
         }
     }
 
