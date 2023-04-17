@@ -34,8 +34,10 @@ public class CollectableController : GameplayObjectController
 
     private void Dissappear(float zValue)
     {
-        if (transform.TransformPoint(StartingPosition).z < zValue || isTagged)
+        if (transform.parent.TransformPoint(StartingPosition).z < zValue)
         {
+            Debug.Log(transform.parent.TransformPoint(StartingPosition).z);
+            Debug.Log("Value: " + zValue);
             transform.localScale = Vector3.zero;
         }
     }
