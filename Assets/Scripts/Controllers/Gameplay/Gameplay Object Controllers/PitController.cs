@@ -81,7 +81,12 @@ public class PitController : GameplayObjectController
         {
             //GameEventManager.Instance.OnPickerMovementStart.Invoke();
             GameEventManager.Instance.OnTaggedObjectsClear.Invoke(transform.position.z);
-            LocalPlatform.transform.DOMoveY(0f, 0.75f).SetEase(Ease.OutElastic).OnComplete(()=> { GameEventManager.Instance.OnPickerMovementStart.Invoke(); Graphics.SetActive(false); });
+
+            LocalPlatform.transform.DOMoveY(0f, 0.75f).SetEase(Ease.OutElastic).OnComplete(()=> { 
+                GameEventManager.Instance.OnPickerMovementStart.Invoke(); 
+                Graphics.SetActive(false); 
+                GameEventManager.Instance.OnPickerSizeReset.Invoke(); 
+            });
         }
         else
         {

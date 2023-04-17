@@ -15,3 +15,5 @@ MonoBehaviour:
   LevelOrder:
   - {fileID: 11400000, guid: 924e6e256b224a64fb4bde0a2f0bd622, type: 2}
   - {fileID: 11400000, guid: 795eb421c4bc41b41a8af2c9fb6f00b9, type: 2}
+  - {fileID: 11400000, guid: 64675d2022b4ee84e9d1547fc4be20fd, type: 2}
+  - {fileID: 11400000, guid: b88e4042f562e934abb25a60e2ac464d, type: 2}

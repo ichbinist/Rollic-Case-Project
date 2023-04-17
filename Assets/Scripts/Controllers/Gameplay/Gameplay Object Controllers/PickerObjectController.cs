@@ -21,6 +21,8 @@ public class PickerObjectController : GameplayObjectController
     {
         LevelInitializationManager.Instance.OnLevelRestarted += ResetData;
         LevelInitializationManager.Instance.OnLevelFinished += ResetData;
+        GameEventManager.Instance.OnPickerSizeReset += ResetSize;
+
     }
 
     private void OnDisable()
@@ -29,6 +31,11 @@ public class PickerObjectController : GameplayObjectController
         {
             LevelInitializationManager.Instance.OnLevelRestarted -= ResetData;
             LevelInitializationManager.Instance.OnLevelFinished -= ResetData;
+        }
+
+        if (GameEventManager.Instance)
+        {
+            GameEventManager.Instance.OnPickerSizeReset -= ResetSize;
         }
     }
 
@@ -57,5 +64,10 @@ public class PickerObjectController : GameplayObjectController
     public void SizeUp(Vector3 sizeAmount)
     {
         transform.DOScale(transform.localScale + sizeAmount, 0.35f).SetEase(Ease.OutQuart);
+    }
+
+    public void ResetSize()
+    {
+        transform.DOScale(Vector3.one, 0.35f).SetEase(Ease.OutQuart);
     }
 }

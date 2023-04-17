@@ -9,4 +9,5 @@ public class GameEventManager : Singleton<GameEventManager>
     public Action OnPickerMovementStart;
     public Action<float> OnTaggedObjectsClear;
     public Action<float> OnPickerMovementFinalized;
+    public Action OnPickerSizeReset;
 }

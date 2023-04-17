@@ -16,6 +16,7 @@ public class CollectableController : GameplayObjectController
     [ReadOnly]
     public bool isTagged;
 
+    private bool isDataSaved;
     private void OnEnable()
     {
         GameEventManager.Instance.OnTaggedObjectsClear += Dissappear;
@@ -62,6 +63,10 @@ public class CollectableController : GameplayObjectController
 
     public override void SaveData()
     {
-        StartingPosition = transform.position;
+        if (!isDataSaved)
+        {
+            isDataSaved = true;
+            StartingPosition = transform.position;
+        }
     }
 }
