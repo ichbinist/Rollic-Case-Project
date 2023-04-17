@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Linq;
+
 public class GameplayLoader : MonoBehaviour
 {
     [FoldoutGroup("References")]
@@ -46,7 +48,7 @@ public class GameplayLoader : MonoBehaviour
         GameObject levelDataObject = new GameObject(levelData.name);
         levelDataObject.transform.parent = transform;
 
-        LevelComponentData[] pitData = levelData.LevelComponentDatas.FindAll(x => x.EditorObjectType == EditorObjectType.Pit).ToArray();
+        LevelComponentData[] pitData = levelData.LevelComponentDatas.FindAll(x => x.EditorObjectType == EditorObjectType.Pit).OrderBy(x=>x.Position.z).ToArray();
 
         InitializePlatforms(pitData, levelData, levelDataObject);
         InitializeSideways(levelDataObject, levelData);
@@ -72,7 +74,7 @@ public class GameplayLoader : MonoBehaviour
             {
                 if (pitData.Length == 1) break;
                 if (i == 0) continue;
-                platform = AddPlatform(levelDataObject, levelData.LevelWidth, pitData[i].Position.z - PitHalfLength);
+                platform = AddPlatform(levelDataObject, levelData.LevelWidth, Mathf.Abs(pitData[i].Position.z - PitHalfLength)-currentLength);
                 platform.transform.localPosition = new Vector3(0, 0, currentLength);
                 currentLength = pitData[i].Position.z + PitHalfLength;
             }

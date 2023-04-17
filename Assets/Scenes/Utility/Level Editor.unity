@@ -544,9 +544,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableObjectName: 
-  LevelLength: 0
-  LevelWidth: 0
+  LevelLength: 70
+  LevelWidth: 6
   SpriteRenderer: {fileID: 621608065}
+  VerticalSliceCount: 5
+  HorizontalSliceRatio: 1.25
+  HorizontalPlacementOffset: -0.5
   LevelEditorComponents:
   - {fileID: 874131670}
   - {fileID: 1445627593}

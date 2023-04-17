@@ -21,4 +21,19 @@ public class PowerupController : GameplayObjectController
     {
         StartingPosition = transform.position;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PickerObjectController pickerObjectController = other.GetComponent<PickerObjectController>();
+        
+        if (pickerObjectController)
+        {
+            if(isCollected == false)
+            {
+                isCollected = true;
+                pickerObjectController.SizeUp(Vector3.one * 0.35f);
+                Graphics.SetActive(false);
+            }
+        }
+    }
 }

@@ -19,6 +19,7 @@ public class CollectableController : GameplayObjectController
     private void OnEnable()
     {
         GameEventManager.Instance.OnTaggedObjectsClear += Dissappear;
+        GameEventManager.Instance.OnPickerMovementStop += AddForce;
     }
 
     private void OnDisable()
@@ -26,14 +27,23 @@ public class CollectableController : GameplayObjectController
         if (GameEventManager.Instance)
         {
             GameEventManager.Instance.OnTaggedObjectsClear -= Dissappear;
+            GameEventManager.Instance.OnPickerMovementStop -= AddForce;
         }
     }
 
-    private void Dissappear()
+    private void Dissappear(float zValue)
+    {
+        if (transform.TransformPoint(StartingPosition).z < zValue || isTagged)
+        {
+            transform.localScale = Vector3.zero;
+        }
+    }
+
+    private void AddForce()
     {
         if (isTagged)
         {
-            transform.localScale = Vector3.zero;
+            _Rigidbody.AddForce(Vector3.forward * 750);
         }
     }
 

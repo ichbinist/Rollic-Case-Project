@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 
 public class PickerObjectController : GameplayObjectController
 {
@@ -19,6 +20,7 @@ public class PickerObjectController : GameplayObjectController
     private void OnEnable()
     {
         LevelInitializationManager.Instance.OnLevelRestarted += ResetData;
+        LevelInitializationManager.Instance.OnLevelFinished += ResetData;
     }
 
     private void OnDisable()
@@ -26,6 +28,7 @@ public class PickerObjectController : GameplayObjectController
         if (LevelInitializationManager.Instance)
         {
             LevelInitializationManager.Instance.OnLevelRestarted -= ResetData;
+            LevelInitializationManager.Instance.OnLevelFinished -= ResetData;
         }
     }
 
@@ -41,6 +44,7 @@ public class PickerObjectController : GameplayObjectController
     public override void ResetData(LevelData levelData)
     {
         transform.position = StartingPosition;
+        transform.localScale = Vector3.one;
         PickerMovementController.HorizontalMovementIndicator = 1f;
         PickerMovementController.IsMovementStarted = false;
     }
@@ -48,5 +52,10 @@ public class PickerObjectController : GameplayObjectController
     public override void SaveData()
     {
         StartingPosition = transform.position;
+    }
+
+    public void SizeUp(Vector3 sizeAmount)
+    {
+        transform.DOScale(transform.localScale + sizeAmount, 0.35f).SetEase(Ease.OutQuart);
     }
 }

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 538547207402032801}
   - component: {fileID: 1423208751521967997}
   - component: {fileID: 1080003081584595117}
+  - component: {fileID: 1158948298404027777}
   m_Layer: 0
   m_Name: Power Up
   m_TagString: Untagged
@@ -90,6 +91,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graphics: {fileID: 2403425254590820159}
+  StartingPosition: {x: 0, y: 0, z: 0}
+  isCollected: 0
+--- !u!65 &1158948298404027777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962249349032065375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 3, z: 1.25}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &8896074892648507994
 PrefabInstance:
   m_ObjectHideFlags: 0
