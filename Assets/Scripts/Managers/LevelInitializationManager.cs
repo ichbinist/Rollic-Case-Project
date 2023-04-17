@@ -115,6 +115,7 @@ public class LevelInitializationManager : Singleton<LevelInitializationManager>
     {
         UnloadLevel(DataOrderLevel);
         PlayerPrefs.SetInt("LevelOrder", PlayerPrefs.GetInt("LevelOrder") + 1);
+        OnLevelFinished.Invoke(GetCurrentLevelData);
         LoadLevel(NextDataOrderLevel);
     }
 

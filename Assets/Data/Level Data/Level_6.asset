@@ -1,0 +1,378 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16092bd40b461274e91d572c3d8ee2b0, type: 3}
+  m_Name: Level_6
+  m_EditorClassIdentifier: 
+  LevelType: 0
+  LevelLength: 70
+  LevelWidth: 6
+  LevelComponentDatas:
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 8.045977}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 8.045977}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 15.287355}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000019073486, z: 16.091953}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000019073486, z: 16.896551}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000019073486, z: 16.896551}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000019073486, z: 16.091953}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 15.287355}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 17.701149}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 18.505747}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 19.310345}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 17.701149}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 18.505747}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 19.310345}
+    PitRequiredCount: 0
+  - EditorObjectType: 1
+    Position: {x: 0, y: -0.0000009536743, z: 30.109472}
+    PitRequiredCount: 18
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 22.528736}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 22.528736}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 24.13793}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 24.13793}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 23.333332}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 23.333332}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 26.551723}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 26.551723}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 35.402298}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 36.206894}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 37.011494}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 37.011494}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 37.011494}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 36.206894}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 35.402298}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 35.402298}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 36.206894}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 41.03448}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 41.03448}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 41.03448}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 42.643677}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 41.83908}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 42.643677}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 41.83908}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 42.643677}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 41.83908}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 45.86207}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 45.86207}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 45.86207}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 45.86207}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 46.666664}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 47.471264}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 47.471264}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 46.666664}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 47.471264}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 46.666664}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 49.885056}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 49.885056}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 49.885056}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 50.68965}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 51.49425}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 50.68965}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 51.49425}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 50.68965}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 51.49425}
+    PitRequiredCount: 0
+  - EditorObjectType: 1
+    Position: {x: 0, y: -0.0000009536743, z: 54.9222}
+    PitRequiredCount: 10
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 58.73563}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 58.73563}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 63.563217}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 60.344826}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 60.344826}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: 0, z: 58.73563}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: 0, z: 58.73563}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 63.563217}
+    PitRequiredCount: 0
+  - EditorObjectType: 1
+    Position: {x: 0, y: -0.0000009536743, z: 67.20963}
+    PitRequiredCount: 10
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 11.264368}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 12.068966}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 11.264368}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 12.068966}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 21.724136}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 22.528736}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 21.724136}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 22.528736}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 24.942528}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 25.747126}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 25.747126}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 24.942528}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 10.45977}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 9.655172}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 8.8505745}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 10.45977}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 9.655172}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 8.8505745}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 6.436781}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 6.436781}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 4.0229893}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 4.0229893}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 0, y: -0.0000009536743, z: 13.67816}
+    PitRequiredCount: 0
+  - EditorObjectType: 2
+    Position: {x: 2, y: -0.0000009536743, z: 36.206894}
+    PitRequiredCount: 0
+  - EditorObjectType: 2
+    Position: {x: 2, y: -0.0000019073486, z: 46.666664}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 59.54023}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 61.14942}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 61.95402}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 62.75862}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -2, y: -0.0000009536743, z: 64.36781}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 64.36781}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 62.75862}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 63.563217}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 61.95402}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 61.14942}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 2, y: -0.0000009536743, z: 59.54023}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 64.36781}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 63.563217}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 63.563217}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 62.75862}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 61.95402}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 61.14942}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 60.344826}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: -1, y: -0.0000009536743, z: 59.54023}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 59.54023}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 60.344826}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 61.14942}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 61.95402}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 62.75862}
+    PitRequiredCount: 0
+  - EditorObjectType: 0
+    Position: {x: 1, y: -0.0000009536743, z: 64.36781}
+    PitRequiredCount: 0

@@ -80,8 +80,13 @@ public class PitController : GameplayObjectController
         if(collectedCollectables.Count >= PitGameObjectComponent.PitRequiredCount)
         {
             //GameEventManager.Instance.OnPickerMovementStart.Invoke();
-            GameEventManager.Instance.OnTaggedObjectsClear.Invoke();
-            LocalPlatform.transform.DOMoveY(0f, 0.75f).SetEase(Ease.OutElastic).OnComplete(()=> { GameEventManager.Instance.OnPickerMovementStart.Invoke(); });
+            GameEventManager.Instance.OnTaggedObjectsClear.Invoke(transform.position.z);
+
+            LocalPlatform.transform.DOMoveY(0f, 0.75f).SetEase(Ease.OutElastic).OnComplete(()=> { 
+                GameEventManager.Instance.OnPickerMovementStart.Invoke(); 
+                Graphics.SetActive(false); 
+                GameEventManager.Instance.OnPickerSizeReset.Invoke(); 
+            });
         }
         else
         {
